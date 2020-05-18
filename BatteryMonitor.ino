@@ -37,10 +37,18 @@ void setup() {
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-
   
+  pinMode(D5, INPUT);
 }
 
 void loop() {
   client.loop();
+
+  //TODO reading voltage is not correct
+  raw = analogRead(D5);
+  volt=raw/1023.0;
+  volt=volt*3.3;
+
+  Serial.print(String(volt));
+  Serial.println("V");
 }

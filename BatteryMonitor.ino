@@ -10,7 +10,7 @@ const char* ssid = STASSID;
 const char* password = STAPSK;
 
 float analogValue;
-float input_voltage;
+float inputVoltage;
 
 WiFiClient espClient;
 
@@ -47,8 +47,8 @@ void loop() {
   delay(1000);  
 
   analogValue = analogRead(A0);
-
-  Serial.print(analogValue);
+  inputVoltage = analogValue * (3.3 / 1023.00);
+  Serial.print(inputVoltage);
   Serial.println("V");
   
   digitalWrite(LED_BUILTIN, LOW);   // Turn the LED on (Note that LOW is the voltage level

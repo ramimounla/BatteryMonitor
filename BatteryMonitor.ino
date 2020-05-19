@@ -44,8 +44,7 @@ void setup() {
 
 void loop() {
   Serial.println("Reading voltage");
-  delay(1000);  
-
+  
   analogValue = analogRead(A0);
   inputVoltage = analogValue * (3.3 / 1023.00);
   Serial.print(inputVoltage);
@@ -55,4 +54,5 @@ void loop() {
   delay(500);                      // Wait for a second
   digitalWrite(LED_BUILTIN, HIGH);  // Turn the LED off by making the voltage HIGH
   delay(500);  
+
 }

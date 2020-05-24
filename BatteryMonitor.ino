@@ -85,6 +85,7 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW);   // Turn the LED on (Note that LOW is the voltage level
   delay(500);                      // Wait for a second
   digitalWrite(LED_BUILTIN, HIGH);  // Turn the LED off by making the voltage HIGH
-  delay(300000);  
-
+  delay(300000);
+  
+  ESP.deepSleep(5*1000000);//5 min
 }
